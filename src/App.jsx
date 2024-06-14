@@ -1,13 +1,13 @@
 // src/App.jsx
 import React, { useEffect, useState } from 'react';
 import { fetchCurrentSeasonRaces } from './services/api';
-import RaceList from './components/RaceList';
+import DriverInfo from './components/DriverInfo';
 
 const App = () => {
   
 
   return (
-  <RaceList />
+  <DriverInfo />
   );
 };
 
