@@ -12,12 +12,9 @@ export const fetchRaceResults = async (raceId) => {
   return response.data;
 };
 
-export const fetchDriverInfo = async (driverNumber, sessionKey) => {
+export const fetchDriversForSession = async (sessionKey) => {
   const response = await axios.get(`${BASE_URL}/drivers`, {
-    params: {
-      driver_number: driverNumber,
-      session_key: sessionKey
-    }
+    params: { session_key: sessionKey }
   });
   return response.data;
 };
