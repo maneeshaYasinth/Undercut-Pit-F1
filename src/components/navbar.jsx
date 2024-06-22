@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-center h-16">
           {/* Nav Links - Desktop */}
-          <div className="hidden sm:flex sm:items-center flex-1">
+          <div className="hidden sm:flex sm:items-center sm:justify-center flex-1">
             <NavLink href="#home">Home</NavLink>
             <NavLink href="#About">About</NavLink>
             <NavLink href="#DriverInfo">Driver Info</NavLink>
