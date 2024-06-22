@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.openf1.org/v1';
 
-const RaceControlInfo = ({ sessionKey, flag, driverNumber }) => {
+const RaceControlInfo = ({ sessionKey, flag }) => {
   const [raceControlData, setRaceControlData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,11 +17,11 @@ const RaceControlInfo = ({ sessionKey, flag, driverNumber }) => {
           params: {
             session_key: sessionKey,
             flag,
-            driver_number: driverNumber
-          }
+          },
         });
         setRaceControlData(response.data);
       } catch (error) {
+        console.error('Error fetching race control data:', error);
         setError('Error fetching race control data');
       } finally {
         setLoading(false);
@@ -29,35 +29,37 @@ const RaceControlInfo = ({ sessionKey, flag, driverNumber }) => {
     };
 
     fetchRaceControlData();
-  }, [sessionKey, flag, driverNumber]);
+  }, [sessionKey, flag]);
 
   if (loading) return <p>Loading race control data...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!raceControlData.length) return <p>No race control data available</p>;
 
+  // Grouping race control data by driver number
+  const groupedByDriver = raceControlData.reduce((acc, event) => {
+    const driverNumber = event.driver_number;
+    if (!acc[driverNumber]) {
+      acc[driverNumber] = [];
+    }
+    acc[driverNumber].push(event);
+    return acc;
+  }, {});
+
+  // Mapping over grouped data to render cards for each driver
   return (
-    <div className="p-4 bg-gradient-to-r from-green-900 via-blue-900 to-indigo-900 rounded shadow w-full">
-      <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
-        Race Control Information
-        <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
-          <span className="bg-gray-400 w-72"></span>
-        </span>
-      </h1>
-      <div className="grid grid-cols-1 gap-4 p-8">
-        {raceControlData.map((event, index) => (
-          <div key={index} className="relative">
-            <div className="p-4 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg">
-              <h2 className="text-xl font-bold mb-2">Event on Lap {event.lap_number}</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {Object.keys(groupedByDriver).map((driverNumber) => (
+        <div key={driverNumber} className="p-4 bg-gradient-to-r from-green-900 via-blue-900 to-indigo-900 rounded shadow">
+          <h2 className="text-xl font-bold mb-2 text-white">Driver {driverNumber}</h2>
+          {groupedByDriver[driverNumber].map((event, index) => (
+            <div key={index} className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg p-4 mb-4">
               <p><strong>Date:</strong> {new Date(event.date).toLocaleString()}</p>
-              <p><strong>Driver Number:</strong> {event.driver_number}</p>
               <p><strong>Flag:</strong> {event.flag}</p>
               <p><strong>Message:</strong> {event.message}</p>
-              <p><strong>Scope:</strong> {event.scope}</p>
-              <p><strong>Sector:</strong> {event.sector}</p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };

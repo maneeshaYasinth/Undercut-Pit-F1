@@ -7,8 +7,7 @@ import RaceControlInfo from './components/RaceControlInfo';
 
 const App = () => {
   const [sessionKey, setSessionKey] = useState('latest');
-  const flag = 'BLACK AND WHITE';
-  const driverNumber = 1;
+  const flag = 'BLACK AND WHITE'; // Adjust flag as needed
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -19,7 +18,7 @@ const App = () => {
       try {
         const response = await fetch('https://api.openf1.org/v1/sessions', {
           params: {
-            session_key: 'latest'
+            session_key: sessionKey
           }
         });
         if (!response.ok) {
@@ -40,7 +39,7 @@ const App = () => {
     };
 
     fetchSessionData();
-  }, []);
+  }, [sessionKey]);
 
   if (error) {
     return <p>Error: {error}</p>;
@@ -49,13 +48,10 @@ const App = () => {
   return (
     <>
       <DriverInfo sessionKey={sessionKey} />
+      {/* <Weather sessionKey={sessionKey} /> */}
       <SessionInfo sessionKey={sessionKey} />
       {startDate && endDate && (
-        <RaceControlInfo
-          sessionKey={sessionKey}
-          flag={flag}
-          driverNumber={driverNumber}
-        />
+        <RaceControlInfo sessionKey={sessionKey} flag={flag} />
       )}
     </>
   );
