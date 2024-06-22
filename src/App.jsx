@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import DriverInfo from './components/DriverInfo';
 import SessionInfo from './components/Sessions';
-import RaceControlInfo from './components/RaceControlInfo';
 import Weather from './components/weather';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import ConditionalRaceControlInfo from './components/ConditionalRaceControlInfo';
 import { Route, Routes } from 'react-router-dom';
+import CarData from './components/carData';
 
 const App = () => {
   const [sessionKey, setSessionKey] = useState('latest');
   const flag = 'BLACK AND WHITE'; // Adjust flag as needed
+  const DRIVER_NUMBER = 55;
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -55,6 +56,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/DriverInfo" element={<DriverInfo sessionKey={sessionKey} />} />
+        <Route path="/carData" element={<CarData driverNumber={DRIVER_NUMBER} sessionKey={sessionKey} />} />
         <Route path="/SessionInfo" element={<SessionInfo sessionKey={sessionKey} />} />
         <Route path="/RaceControlInfo" element={
           <ConditionalRaceControlInfo 

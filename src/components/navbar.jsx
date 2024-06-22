@@ -16,7 +16,7 @@ const Navbar = () => {
           {/* Nav Links - Desktop */}
           <div className="hidden sm:flex sm:items-center sm:justify-center flex-1">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/About">About</NavLink>
+            <NavLink to="/carData">Car Data</NavLink>
             <NavLink to="/DriverInfo">Driver Info</NavLink>
             <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
             <NavLink to="/SessionInfo">Session Info</NavLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
             {/* Navigation Links */}
             <div className="flex flex-col items-start space-y-4" onClick={toggleMenu}>
               <NavLink to="/">Home</NavLink>
-              <NavLink to="/About">About</NavLink>
+              <NavLink to="/carData">Car Data</NavLink>
               <NavLink to="/DriverInfo">Driver Info</NavLink>
               <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
               <NavLink to="/SessionInfo">Session Info</NavLink>

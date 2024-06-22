@@ -1,11 +1,10 @@
-// src/components/RaceControlInfo.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const BASE_URL = 'https://api.openf1.org/v1';
 
 const RaceControlInfo = ({ sessionKey, flag }) => {
+  const DRIVER_NUMBER = 1; // Fetch data for driver number 1
   const [raceControlData, setRaceControlData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,6 +16,7 @@ const RaceControlInfo = ({ sessionKey, flag }) => {
           params: {
             session_key: sessionKey,
             flag,
+            driver_number: DRIVER_NUMBER,
           },
         });
         setRaceControlData(response.data);
@@ -32,7 +32,7 @@ const RaceControlInfo = ({ sessionKey, flag }) => {
   }, [sessionKey, flag]);
 
   if (loading) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Loading race control data...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Error: {error}</p>;
   if (!raceControlData.length) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">No race control data available</p>;
 
   // Grouping race control data by driver number

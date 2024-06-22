@@ -31,9 +31,9 @@ const SessionInfo = ({ sessionKey }) => {
     fetchSessionData();
   }, [sessionKey]);
 
-  if (loading) return <p>Loading session data...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!session) return <p>No session data available</p>;
+  if (loading) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Loading session data...</p>;
+  if (error) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Error: {error}</p>;
+  if (!session) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">No session data available</p>;
 
   return (
     <div className="bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 min-h-screen flex flex-col justify-center items-center">

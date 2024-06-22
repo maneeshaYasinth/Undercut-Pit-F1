@@ -22,7 +22,7 @@ const DriverInfo = ({ sessionKey }) => {
   }, [sessionKey]);
 
   if (loading) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Loading...</p> ;
-  if (error) return <p class="text-white text-2xl flex items-center justify-center h-full">Error: {error}</p>;
+  if (error) return <p class="text-black text-2xl flex items-center justify-center h-full">Error: {error}</p>;
 
   return (
     <div id='DriverInfo'>
