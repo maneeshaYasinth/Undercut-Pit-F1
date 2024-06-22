@@ -47,7 +47,7 @@ const RaceControlInfo = ({ sessionKey, flag }) => {
 
   // Mapping over grouped data to render cards for each driver
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div id='RaceControlInfo' className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {Object.keys(groupedByDriver).map((driverNumber) => (
         <div key={driverNumber} className="p-4 bg-gradient-to-r from-green-900 via-blue-900 to-indigo-900 rounded shadow">
           <h2 className="text-xl font-bold mb-2 text-white">Driver {driverNumber}</h2>

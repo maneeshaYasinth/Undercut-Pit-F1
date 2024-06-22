@@ -38,7 +38,7 @@ const SessionInfo = ({ sessionKey }) => {
   if (!session) return <p>No session data available</p>;
 
   return (
-    <div className="p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full">
+    <div id='SessionInfo' className="p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full">
       <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
         Session Information
         <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">

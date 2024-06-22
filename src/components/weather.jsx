@@ -1,5 +1,3 @@
-// Weather.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -22,6 +20,7 @@ const Weather = ({ sessionKey }) => {
         });
         setWeatherData(response.data);
       } catch (error) {
+        console.error('Error fetching weather data:', error);
         setError('Error fetching weather data');
       } finally {
         setLoading(false);

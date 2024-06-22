@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import DriverInfo from './components/DriverInfo';
 import SessionInfo from './components/Sessions';
 import RaceControlInfo from './components/RaceControlInfo';
+import Weather from './components/weather';
+import Navbar from './components/navbar';
 
 const App = () => {
   const [sessionKey, setSessionKey] = useState('latest');
@@ -47,6 +49,7 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       <DriverInfo sessionKey={sessionKey} />
       {/* <Weather sessionKey={sessionKey} /> */}
       <SessionInfo sessionKey={sessionKey} />
