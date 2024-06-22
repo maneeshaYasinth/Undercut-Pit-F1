@@ -1,11 +1,12 @@
-// src/App.jsx
-
 import React, { useState, useEffect } from 'react';
 import DriverInfo from './components/DriverInfo';
 import SessionInfo from './components/Sessions';
 import RaceControlInfo from './components/RaceControlInfo';
 import Weather from './components/weather';
 import Navbar from './components/navbar';
+import Home from './components/home';
+import ConditionalRaceControlInfo from './components/ConditionalRaceControlInfo';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   const [sessionKey, setSessionKey] = useState('latest');
@@ -50,12 +51,20 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <DriverInfo sessionKey={sessionKey} />
-      {/* <Weather sessionKey={sessionKey} /> */}
-      <SessionInfo sessionKey={sessionKey} />
-      {startDate && endDate && (
-        <RaceControlInfo sessionKey={sessionKey} flag={flag} />
-      )}
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/DriverInfo" element={<DriverInfo sessionKey={sessionKey} />} />
+        <Route path="/SessionInfo" element={<SessionInfo sessionKey={sessionKey} />} />
+        <Route path="/RaceControlInfo" element={
+          <ConditionalRaceControlInfo 
+            sessionKey={sessionKey} 
+            flag={flag} 
+            startDate={startDate} 
+            endDate={endDate} 
+          />
+        } />
+      </Routes>
     </>
   );
 };

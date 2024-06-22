@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +15,12 @@ const Navbar = () => {
         <div className="relative flex items-center justify-center h-16">
           {/* Nav Links - Desktop */}
           <div className="hidden sm:flex sm:items-center sm:justify-center flex-1">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#About">About</NavLink>
-            <NavLink href="#DriverInfo">Driver Info</NavLink>
-            <NavLink href="#RaceControlInfo">Race Control Info</NavLink>
-            <NavLink href="#SessionInfo">Session Info</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/About">About</NavLink>
+            <NavLink to="/DriverInfo">Driver Info</NavLink>
+            <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
+            <NavLink to="/SessionInfo">Session Info</NavLink>
+            <NavLink to="/Contact">Contact</NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -45,12 +46,12 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <div className="flex flex-col items-start space-y-4" onClick={toggleMenu}>
-              <NavLink href="#home">Home</NavLink>
-              <NavLink href="#About">About</NavLink>
-              <NavLink href="#DriverInfo">Driver Info</NavLink>
-              <NavLink href="#RaceControlInfo">Race Control Info</NavLink>
-              <NavLink href="#SessionInfo">Session Info</NavLink>
-              <NavLink href="#contact">Contact</NavLink>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/About">About</NavLink>
+              <NavLink to="/DriverInfo">Driver Info</NavLink>
+              <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
+              <NavLink to="/SessionInfo">Session Info</NavLink>
+              <NavLink to="/Contact">Contact</NavLink>
             </div>
           </div>
 
@@ -63,10 +64,10 @@ const Navbar = () => {
 };
 
 // NavLink Component for Consistency
-const NavLink = ({ href, children }) => {
+const NavLink = ({ to, children }) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       className="relative px-4 py-2 text-lg font-medium text-white rounded-full 
                  hover:text-pink-100
                  after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-gray-500 
@@ -75,7 +76,7 @@ const NavLink = ({ href, children }) => {
                  after:shadow-[0_0_10px_gray,0_0_20px_gray,0_0_30px_gray]"
     >
       {children}
-    </a>
+    </Link>
   );
 };
 

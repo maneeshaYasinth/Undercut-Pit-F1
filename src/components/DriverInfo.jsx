@@ -25,7 +25,8 @@ const DriverInfo = ({ sessionKey }) => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div id='DriverInfo' className="mt-14  pt-4  p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full">
+    <div id='DriverInfo'>
+    <div className=" p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full">
       <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
         Drivers in 2024 Session
         <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
@@ -45,6 +46,7 @@ const DriverInfo = ({ sessionKey }) => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
