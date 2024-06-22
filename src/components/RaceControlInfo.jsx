@@ -31,9 +31,9 @@ const RaceControlInfo = ({ sessionKey, flag }) => {
     fetchRaceControlData();
   }, [sessionKey, flag]);
 
-  if (loading) return <p>Loading race control data...</p>;
+  if (loading) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">Loading race control data...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!raceControlData.length) return <p id='RaceControlInfo'>No race control data available</p>;
+  if (!raceControlData.length) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">No race control data available</p>;
 
   // Grouping race control data by driver number
   const groupedByDriver = raceControlData.reduce((acc, event) => {

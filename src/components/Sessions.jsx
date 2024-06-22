@@ -1,5 +1,3 @@
-// SessionInfo.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -38,16 +36,16 @@ const SessionInfo = ({ sessionKey }) => {
   if (!session) return <p>No session data available</p>;
 
   return (
-    <div  className="bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full min-h-fit">
-      <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
-        Session Information
-        <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
-          <span className="bg-gray-400 w-72"></span>
-        </span>
-      </h1>
-      <div className="grid grid-cols-1 gap-4 p-8">
-        <div className="relative">
-          <div className="p-4 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg">
+    <div className="bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 min-h-screen flex flex-col justify-center items-center">
+      <div className="w-full max-w-screen-lg bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg p-8">
+        <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
+          Session Information
+          <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
+            <span className="bg-gray-400 w-72"></span>
+          </span>
+        </h1>
+        <div className="grid grid-cols-1 gap-4">
+          <div className="relative">
             <h2 className="text-xl font-bold mb-2">{session.session_name}</h2>
             <p><strong>Session Type:</strong> {session.session_type}</p>
             <p><strong>Location:</strong> {session.location}</p>
