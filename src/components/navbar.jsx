@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full shadow-lg navbar font-krona bg-red-500 rounded-lg">
+    <nav className="fixed top-0 left-0 z-50 w-full shadow-lg navbar font-krona bg-gradient-to-b from-gray-800 to-gray-700  rounded-lg">
       <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-center h-16">
           {/* Nav Links - Desktop */}
@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex flex-col items-start space-y-4" onClick={toggleMenu}>
+            <div className="flex flex-col items-center space-y-4  " onClick={toggleMenu}>
               <NavLink to="/">Home</NavLink>
               <NavLink to="/carData">Car Data</NavLink>
               <NavLink to="/DriverInfo">Driver Info</NavLink>
@@ -70,10 +70,10 @@ const NavLink = ({ to, children }) => {
       to={to}
       className="relative px-4 py-2 text-lg font-medium text-white rounded-full 
                  hover:text-pink-100
-                 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-gray-500 
+                 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-600 
                  after:left-0 after:bottom-0 after:transition-transform after:duration-300 
                  after:scale-x-0 hover:after:scale-x-100 
-                 after:shadow-[0_0_10px_gray,0_0_20px_gray,0_0_30px_gray]"
+                 after:shadow-[0_0_10px_gold,0_0_20px_gold,0_0_30px_gold]"
     >
       {children}
     </Link>
