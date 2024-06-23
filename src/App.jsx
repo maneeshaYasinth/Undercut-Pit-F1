@@ -56,7 +56,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/DriverInfo" element={<DriverInfo sessionKey={sessionKey} />} />
-        <Route path="/carData" element={<CarData driverNumber={DRIVER_NUMBER} sessionKey={sessionKey} />} />
+        <Route path="/carData" element={<CarData sessionKey={sessionKey} />} />
         <Route path="/SessionInfo" element={<SessionInfo sessionKey={sessionKey} />} />
         <Route path="/RaceControlInfo" element={
           <ConditionalRaceControlInfo 
