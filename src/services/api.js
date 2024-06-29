@@ -18,3 +18,16 @@ export const fetchDriversForSession = async (sessionKey) => {
   });
   return response.data;
 };
+
+
+export const fetchTeamRadio = async (sessionKey, driverNumber) => {
+  const url = `https://api.openf1.org/v1/team_radio?session_key=${sessionKey}&driver_number=${driverNumber}`;
+  console.log('Fetching from URL:', url);
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Failed to fetch team radio data');
+  }
+  const data = await response.json();
+  console.log('Fetched data:', data);
+  return data;
+};
