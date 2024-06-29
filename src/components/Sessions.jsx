@@ -53,7 +53,7 @@ const SessionInfo = ({ sessionKey }) => {
             <p><strong>Date End:</strong> {new Date(session.date_end).toLocaleString()}</p>
           </div>
         </div>
-        <p>*latest Race results feature will added soon in fiture :)</p>
+        <p className='mt-8'>*latest Race results feature will added soon in fiture :)</p>
       </div>
     </div>
     
