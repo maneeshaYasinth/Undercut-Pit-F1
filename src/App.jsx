@@ -7,6 +7,7 @@ import Home from './components/home';
 import ConditionalRaceControlInfo from './components/ConditionalRaceControlInfo';
 import { Route, Routes } from 'react-router-dom';
 import CarData from './components/carData';
+import TeamRadio from './components/TeamRadio'
 
 const App = () => {
   const [sessionKey, setSessionKey] = useState('latest');
@@ -27,14 +28,7 @@ const App = () => {
         <Route path="/DriverInfo" element={<DriverInfo sessionKey={sessionKey} />} />
         <Route path="/carData" element={<CarData sessionKey={sessionKey} />} />
         <Route path="/SessionInfo" element={<SessionInfo sessionKey={sessionKey} />} />
-        <Route path="/RaceControlInfo" element={
-          <ConditionalRaceControlInfo 
-            sessionKey={sessionKey} 
-            flag={flag} 
-            startDate={startDate} 
-            endDate={endDate} 
-          />
-        } />
+        <Route path="/TeamRadio" element={<TeamRadio sessionKey={sessionKey} />} />
       </Routes>
     </>
   );
