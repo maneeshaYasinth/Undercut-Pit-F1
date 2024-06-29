@@ -18,7 +18,7 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/carData">Car Data</NavLink>
             <NavLink to="/DriverInfo">Driver Info</NavLink>
-            <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
+            <NavLink to="/TeamRadio">Team Radio</NavLink>
             <NavLink to="/SessionInfo">Session Info</NavLink>
             <NavLink to="/Contact">Contact</NavLink>
           </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/carData">Car Data</NavLink>
               <NavLink to="/DriverInfo">Driver Info</NavLink>
-              <NavLink to="/RaceControlInfo">Race Control Info</NavLink>
+              <NavLink to="/TeamRadio">Team Radio</NavLink>
               <NavLink to="/SessionInfo">Session Info</NavLink>
               <NavLink to="/Contact">Contact</NavLink>
             </div>
