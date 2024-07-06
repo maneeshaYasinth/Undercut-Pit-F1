@@ -53,8 +53,8 @@ const TeamRadio = ({ sessionKey }) => {
             <div key={index} className="p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
               <h2 className="text-xl font-bold mb-2">{new Date(radio.date).toLocaleString()}</h2>
               <audio controls src={radio.recording_url} className="w-full" />
-              <p><strong>Meeting Key:</strong> {radio.meeting_key}</p>
-              <p><strong>Session Key:</strong> {radio.session_key}</p>
+              {/* <p><strong>Meeting Key:</strong> {radio.meeting_key}</p>
+              <p><strong>Session Key:</strong> {radio.session_key}</p> */}
             </div>
           ))
         ) : (
