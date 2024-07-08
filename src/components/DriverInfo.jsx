@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchDriversForSession } from '../services/api';
+import driverinfo2 from '../assets/driverinfo2.jpg'
 
 const DriverInfo = ({ sessionKey }) => {
   const [drivers, setDrivers] = useState([]);
@@ -26,13 +27,14 @@ const DriverInfo = ({ sessionKey }) => {
 
   return (
     <div id='DriverInfo'>
-    <div className="pt-20 p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 rounded shadow w-full">
-      <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
-        Drivers in 2024 Session
-        <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
-  <span className="bg-gray-400 w-72"></span>
-</span>
-      </h1>
+    <div className="pt-20 p-4  rounded shadow w-full" style={{ backgroundImage: `url(${driverinfo2})`, backgroundSize: 'cover', backgroundPosition: 'center' , backgroundAttachment: 'fixed'}}>
+    <h1 className="text-5xl font-sans mb-4 text-center relative pb-3 bg-gradient-to-r from-white via-amber-100 to-yellow-500 bg-clip-text text-transparent">
+  Drivers in 2024 Session
+  <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
+    <span className="bg-gray-400 w-72"></span>
+  </span>
+</h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
         {drivers.map(driver => (
           <div key={driver.driver_number} className="relative">

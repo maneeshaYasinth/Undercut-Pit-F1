@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import newBg from '../assets/newBg.jpg'
 
 const BASE_URL = 'https://api.openf1.org/v1';
 
@@ -36,7 +37,7 @@ const SessionInfo = ({ sessionKey }) => {
   if (!session) return <p class="text-black text-2xl flex items-center justify-center h-full mt-32 ">No session data available</p>;
 
   return (
-    <div className="bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 min-h-screen flex flex-col justify-center items-center">
+    <div className=" min-h-screen flex flex-col justify-center items-center" style={{ backgroundImage: `url(${newBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="w-full max-w-screen-lg bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg p-8">
         <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
           Session Information
@@ -46,7 +47,7 @@ const SessionInfo = ({ sessionKey }) => {
         </h1>
         <div className="grid grid-cols-1 gap-4">
           <div className="relative">
-            <h2 className="text-xl font-bold mb-2">{session.session_name}</h2>
+            <h2 className="text-2xl font-bold mb-2">{session.session_name}</h2>
             <p><strong>Session Type:</strong> {session.session_type}</p>
             <p><strong>Location:</strong> {session.location}</p>
             <p><strong>Date Start:</strong> {new Date(session.date_start).toLocaleString()}</p>
