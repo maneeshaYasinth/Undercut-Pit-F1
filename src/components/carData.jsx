@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import sessionBg from '../assets/sessionBg.jpg'
 
 const BASE_URL = 'https://api.openf1.org/v1';
 
@@ -65,9 +66,9 @@ const CarData = () => {
   }, []); // Empty dependency array ensures this effect runs only once on mount
 
   return (
-    <div className="bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900 min-h-screen">
-      <div className="container mx-auto p-8">
-        <h1 className="text-3xl font-bold text-white mb-8">Select a Driver Number</h1>
+    <div className="min-h-screen" style={{ backgroundImage: `url(${sessionBg})`, backgroundSize: 'cover', backgroundPosition: 'center' , backgroundAttachment: 'fixed'}}>
+      <div className="container mx-auto p-8 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg mt-10">
+        <h1 className="text-3xl font-bold text-white mb-8 mt-16">Select a Driver Number</h1>
         <div className="flex items-center justify-center mb-8">
           <label className="text-white mr-4">Driver Number:</label>
           <input
