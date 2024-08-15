@@ -20,7 +20,6 @@ const Navbar = () => {
             <NavLink to="/DriverInfo">Driver Info</NavLink>
             <NavLink to="/TeamRadio">Team Radio</NavLink>
             <NavLink to="/SessionInfo">Session Info</NavLink>
-            <NavLink to="/Contact">Contact</NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -51,7 +50,6 @@ const Navbar = () => {
               <NavLink to="/DriverInfo">Driver Info</NavLink>
               <NavLink to="/TeamRadio">Team Radio</NavLink>
               <NavLink to="/SessionInfo">Session Info</NavLink>
-              <NavLink to="/Contact">Contact</NavLink>
             </div>
           </div>
 
