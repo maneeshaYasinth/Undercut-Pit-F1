@@ -15,7 +15,7 @@ const TeamRadio = ({ sessionKey }) => {
 
     try {
       const data = await fetchTeamRadio(sessionKey, driverNumber);
-      data.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date descending
+      data.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sorting
       setRadioData(data);
     } catch (error) {
       setError(error.message);
@@ -26,7 +26,7 @@ const TeamRadio = ({ sessionKey }) => {
 
   return (
     <div className="pt-20 p-4 bg-gradient-to-r from-purple-900 via-fuchsia-900 to-pink-900  rounded shadow w-full">
-      <h1 className="text-2xl font-bold mb-4 text-center font-sans">Latest Team Radio</h1>
+      <h1 className="text-3xl font-bold text-white mb-8 mt-12 text-center">Latest Team Radio</h1>
 
       <div className="flex items-center justify-center mb-4">
         <input
@@ -58,7 +58,7 @@ const TeamRadio = ({ sessionKey }) => {
             </div>
           ))
         ) : (
-          <p>No team radio data available for this driver.</p>
+          <p>......</p>
         )}
       </div>
     </div>
