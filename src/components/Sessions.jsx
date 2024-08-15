@@ -18,7 +18,7 @@ const SessionInfo = ({ sessionKey }) => {
           }
         });
         if (response.data && response.data.length > 0) {
-          setSession(response.data[0]); // Assuming session_key is unique and returns one session
+          setSession(response.data[0]); 
         } else {
           setError('Session not found');
         }
@@ -40,7 +40,7 @@ const SessionInfo = ({ sessionKey }) => {
     <div className=" min-h-screen flex flex-col justify-center items-center" style={{ backgroundImage: `url(${newBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="w-full max-w-screen-lg bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg p-8">
         <h1 className="text-5xl text-gray-400 font-sans mb-4 text-center relative pb-3">
-          Session Information
+          Latest Session Information
           <span className="absolute w-full h-1 bottom-0 left-0 flex justify-center">
             <span className="bg-gray-400 w-72"></span>
           </span>
